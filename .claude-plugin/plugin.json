@@ -1,0 +1,8 @@
+{
+  "name": "model-router",
+  "description": "Automatic model selection to optimize token costs. Routes simple tasks to Haiku, standard tasks to Sonnet, and complex tasks to Opus.",
+  "version": "1.0.0",
+  "author": {
+    "name": "User"
+  }
+}
