@@ -14,11 +14,44 @@ A Claude Code plugin that automatically selects the cheapest Claude model capabl
 
 ## Installation
 
+There are two ways to use model-router: as a **full plugin** or as a **standalone command**.
+
+### Option A: Full Plugin (recommended)
+
+Gives you all features — slash commands, worker agents, advisory hook, and auto-triggered skill.
+
 ```bash
+git clone https://github.com/oharveyoh-web/model-router.git
 claude --plugin-dir /path/to/model-router
 ```
 
-## Usage
+### Option B: Standalone Command (lightweight alternative)
+
+If you just want the core routing functionality without installing the full plugin, copy a single file:
+
+```bash
+# Copy the standalone command to your global Claude Code commands
+cp standalone/model-routing.md ~/.claude/commands/model-routing.md
+```
+
+Then use it in any Claude Code session with:
+
+```
+/model-routing <task description>
+```
+
+This classifies the task, recommends a model tier, and delegates to a subagent at the right tier. No plugin loading required.
+
+**Differences from the full plugin:**
+- No `/route-haiku`, `/route-sonnet`, `/route-opus` shortcuts
+- No advisory hook (passive mismatch detection)
+- No `/route-stats` logging
+- No auto-triggered skill
+- Works globally without `--plugin-dir`
+
+---
+
+## Usage (Full Plugin)
 
 ### Auto-classify and delegate
 
